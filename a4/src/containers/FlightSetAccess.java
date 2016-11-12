@@ -26,6 +26,10 @@ public class FlightSetAccess {
         if (dictionary == null) {
             /* Create the initial dictionary. */
             dictionary = new HashMap<Integer, Flight>();
+            Flight x1 = new Flight(1,4,36);
+            Flight x2 = new Flight(2,9,36);
+            dictionary.put(1, x1);
+            dictionary.put(2, x2);
         }
         return dictionary;
     }
