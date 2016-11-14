@@ -1,6 +1,6 @@
 package startup;
 
-import commands.addANewPassenger;
+import commands.AddANewPassenger;
 import commands.displayEmptySeat;
 import commands.bookARegularPassenger;
 import interfaces.ManagerInterface;
@@ -49,14 +49,11 @@ public class Controller {
 	public void addPassenger(){
 		String name = aInterface.readName();
 		String telNumber = aInterface.readTelNumber();
-		addANewPassenger addPeople = new addANewPassenger();
+		AddANewPassenger addPeople = new AddANewPassenger();
 		addPeople.addPassenger(name,telNumber);
 		if (addPeople.wasSuccessful()) {
 			aInterface.sendMessage("Deposit successful.\nReceipt being printed.");
 	    } 
-		else{
-			aInterface.sendMessage(addPeople.getErrorMessage());
-		}
 	}
 	
 	/**
@@ -69,9 +66,6 @@ public class Controller {
 		if (displayObjectA.wasSuccessful()) {
 			aInterface.sendMessage("Deposit successful.\nReceipt being printed.");
 	    } 
-		else{
-			aInterface.sendMessage(displayObjectA.getErrorMessage());
-		}
 	}
 	
 	/**
@@ -85,8 +79,5 @@ public class Controller {
 		if (bookOne.wasSuccessful()) {
 			aInterface.sendMessage("Deposit successful.\nReceipt being printed.");
 	    } 
-		else{
-			aInterface.sendMessage(bookOne.getErrorMessage());
-		}
 	}
 }

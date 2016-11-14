@@ -19,11 +19,19 @@ public class bookARegularPassenger extends CommandStatus{
 	 */
 	public void bookPassenger(String name, int number){
 		Passenger p = PassengerSetAccess.dictionary().get(name);
-		if (p == null)
-			throw new RuntimeException("There is no passenger with name " + name);
-		Flight f = FlightSetAccess.dictionary().get(number);
-		if (f == null)
-			throw new RuntimeException("There is no flight with number " + number);
-		else f.makeBooking(p);
+		if (p == null){
+			errorMessage=("There is no passenger with name " + name);
+			successful = false; 
+		}
+		else{
+			Flight f = FlightSetAccess.dictionary().get(number);
+			if (f == null){
+				errorMessage=("There is no flight with number " + number);
+				successful = false; 
+			}
+			else 
+				f.makeBooking(p);
+				successful = true;
+		}
 	}
 }

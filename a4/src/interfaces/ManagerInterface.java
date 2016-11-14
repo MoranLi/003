@@ -26,7 +26,7 @@ public class ManagerInterface {
 	 */
 	public void readCommand(){
 		System.out.println("Please enter your operiation code(1, 3, 4, 0):");
-		code = consoleIn.nextInt();
+		code = readInt();
 	}
 	
 	/**
@@ -43,7 +43,7 @@ public class ManagerInterface {
 	 */
 	public String readName(){
 		System.out.print("Enter the name of the passenger: ");
-		String name = consoleIn.nextLine();
+		String name = readString();
 		return name;
 	}
 	
@@ -53,7 +53,7 @@ public class ManagerInterface {
 	 */
 	public String readTelNumber(){
 		System.out.print("Enter the telephone number of the passenger: ");
-		String telNumber = consoleIn.nextLine();
+		String telNumber = readString();
 		return telNumber;
 	}
 	
@@ -63,7 +63,26 @@ public class ManagerInterface {
 	 */
 	public int readFlightNumber(){
 		System.out.print("Enter the number of the Flight: ");
-		int FlightNumber = consoleIn.nextInt();
+		int FlightNumber = readInt();
 		return FlightNumber;
+	}
+	
+	/**
+	 * read an integer from input
+	 * @return integer a integer from system in
+	 */
+	public int readInt(){
+		int integer = consoleIn.nextInt();
+		consoleIn.nextLine();
+		return integer;
+	}
+	
+	/**
+	 * read a String from input
+	 * @return string form system in
+	 */
+	public String readString(){
+		String string = consoleIn.nextLine();
+		return string;
 	}
 }
