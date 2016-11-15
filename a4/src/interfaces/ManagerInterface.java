@@ -25,7 +25,6 @@ public class ManagerInterface {
 	 * ask user to input a command
 	 */
 	public void readCommand(){
-		System.out.println("Please enter your operiation code(1, 3, 4, 0):");
 		code = readInt();
 	}
 	
